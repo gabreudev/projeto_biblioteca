@@ -1,0 +1,32 @@
+@model mvc.Models.Aluno
+
+@{
+    ViewData["Title"] = "BiblioEEEP";
+}
+
+<h1>Deseja marcar como entregue o livro deste aluno?</h1>
+</hr>
+<dl>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(x => x.Nome)
+    </dt>
+    <dt class="col-sm-10">
+        @Html.DisplayFor(x => x.Nome)
+    </dt>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(x => x.Turma)
+    </dt>
+    <dt class="col-sm-10">
+        @Html.DisplayFor(x => x.Turma)
+    </dt><dt class="col-sm-2">
+        @Html.DisplayNameFor(x => x.Livro)
+    </dt>
+    <dt class="col-sm-10">
+        @Html.DisplayFor(x => x.Livro)
+    </dt>
+</dl>
+
+<form asp-action= "Recebido">
+    <input type="submit" value="Recebido" type="btn btn-primary">
+
+</form>

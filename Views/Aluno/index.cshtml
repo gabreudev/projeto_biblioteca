@@ -1,0 +1,50 @@
+@model IEnumerable<mvc.Models.Aluno>
+
+@{
+    ViewData["Title"] = "BiblioEEEP";
+}
+
+<h2>Alunos</h2>
+
+<p> 
+        <a asp-action = "Criar">Cadastrar novo Aluno</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Turma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Livro)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Turma)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Livro)
+                </td>
+                <td>
+                    <a asp-action = "Editar"asp-route-id="@item.Id">Editar |</a>
+                    <a asp-action = "Recebido"asp-route-id="@item.Id">Marcar como entregue</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
